@@ -17,4 +17,5 @@ class ApplicationController < Sinatra::Base
   end
 
   delete('/articles/:id') {Article.destroy(params[:id]); erb :index}
+  patch('/articles/:id') {Article.find(params[:id]).update(params[:article])}
 end
