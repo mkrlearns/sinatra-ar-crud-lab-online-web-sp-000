@@ -3,11 +3,7 @@ require_relative '../../config/environment'
 
 class ApplicationController < Sinatra::Base
 
-  configure do
-    set :public_folder, 'public'
-    set :views, 'app/views'
-  end
+  configure() {set :public_folder, 'public'; set :views, 'app/views'}
 
-  get '/' do
-  end
+  get('/articles/new') {@article = Article.new; erb :index}
 end
