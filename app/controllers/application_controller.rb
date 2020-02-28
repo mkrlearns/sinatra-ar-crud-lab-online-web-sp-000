@@ -8,5 +8,5 @@ class ApplicationController < Sinatra::Base
   get('/') {erb :index}
   get('/articles') {@articles = Article.all; erb :index}
   get('/articles/new') {@article = Article.new; erb :index}
-  get('/articles/new') {@article = Article.new; erb :index}
+  get('/articles/:id') {@article = Article.find(params[:id]); erb :show}
 end
