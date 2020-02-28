@@ -15,4 +15,6 @@ class ApplicationController < Sinatra::Base
     @article = Article.create(params)
     redirect "/articles/#{@article.id}"
   end
+
+  delete('/articles/:id') {Article.destroy(params[:id]); erb :index}
 end
